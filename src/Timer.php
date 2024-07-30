@@ -28,8 +28,8 @@ class Timer
         ];
 
         $this->report[$mark] = $report;
-        $this->memoryPeak    = memory_get_usage();
-        $this->memory        = memory_get_peak_usage();
+        $this->memory        = $report['memory'];
+        $this->memoryPeak    = $report['memory_peak'];
         $this->endTimestamp  = $this->getTime();
 
         return $this;
