@@ -7,15 +7,16 @@
     $timer = new Timer();
 
     $timer->start();
+    usleep(1000 * 500);
 
     $timer->mark('a');
-    sleep(1);
+    usleep(1000 * 500);
 
     $timer->mark('b');
-    sleep(1);
+    usleep(1000 * 500);
 
     $timer->mark('c');
-    sleep(1);
+    usleep(1000 * 500);
 
     $timer->mark('d');
 
