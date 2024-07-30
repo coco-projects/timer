@@ -15,7 +15,7 @@ class Timer
         if (!$this->startTimestamp) {
             throw new \LogicException('must execute the start method first');
         }
-            
+
         $microtime = $this->getTime();
 
         $this->report[$mark] = [
@@ -57,7 +57,7 @@ class Timer
 
     protected function formatTime($time): float|int
     {
-        return sprintf("%.6f", $time);
+        return sprintf("%.9f", $time);
     }
 
     public function getMarkMemory($mark): string
@@ -119,6 +119,6 @@ class Timer
 
     protected function getTime(): float|int
     {
-        return microtime(true);
+        return hrtime(true) / 1e9;
     }
 }
