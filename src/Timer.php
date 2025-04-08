@@ -62,7 +62,7 @@
             return $this->formatTime($this->getTime() - $this->lastMarkTimestamp);
         }
 
-        protected function formatTime($time): float|int
+        public function formatTime($time): float|int
         {
             return sprintf("%.9f", $time);
         }
@@ -91,7 +91,7 @@
             return $this->formatMemroy(memory_get_peak_usage());
         }
 
-        protected function formatMemroy($bytes): string
+        public function formatMemroy($bytes): string
         {
             $units = [
                 'B',
@@ -124,7 +124,7 @@
             return $this->report[$mark];
         }
 
-        protected function getTime(): float|int
+        public function getTime(): float|int
         {
             return hrtime(true) / 1e9;
         }
